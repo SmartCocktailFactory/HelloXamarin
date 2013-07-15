@@ -15,14 +15,14 @@ namespace HelloXamarin {
     protected override void OnCreate(Bundle bundle) {
       base.OnCreate(bundle);
 
-      // Set our view from the "main" layout resource
       SetContentView(Resource.Layout.Main);
 
-      // Get our button from the layout resource,
-      // and attach an event to it
-      Button button = FindViewById<Button>(Resource.Id.MyButton);
+      var aButton = FindViewById<Button>(Resource.Id.aButton);
+      var aLabel = FindViewById<TextView>(Resource.Id.helloLabel);
 
-      button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+      aButton.Click += (sender, e) => {
+        aLabel.Text = "Hello from the button";
+      };
     }
   }
 }
